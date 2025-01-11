@@ -1,15 +1,15 @@
-import React,{useState} from 'react';
+
+
+
+
+import React, { useState } from 'react';
 import { FaCog } from 'react-icons/fa';
-import { FaClipboardList } from 'react-icons/fa';
-import { FaCalendarAlt } from 'react-icons/fa';
+import { FaRegClipboard } from 'react-icons/fa';
+import { FaCalendar } from 'react-icons/fa';
 import { FaTasks } from 'react-icons/fa';
-import { FaChartBar } from 'react-icons/fa';
-import { FaUser } from 'react-icons/fa';
+import { FaChartLine } from 'react-icons/fa';
+import { FaUserAlt } from 'react-icons/fa';
 import './hmpge.css';
-
-
-
-
 
 const Navbar = () => {
   return (
@@ -56,9 +56,8 @@ const Navcll = () => {
     setVisibleDates(newVisibleDates);
   };
 
-  // Function to get the day of the week (e.g., "Mon", "Tue")
   const getWeekdayName = (date) => {
-    return date.toLocaleString('en-US', { weekday: 'short' }); // Returns "Mon", "Tue", etc.
+    return date.toLocaleString('en-US', { weekday: 'short' });
   };
 
   return (
@@ -69,14 +68,14 @@ const Navcll = () => {
       <div className="calendar">
         {visibleDates.map((date) => {
           const isToday = date.getDate() === currentDay;
-          const weekday = getWeekdayName(date); // Get weekday for each date
+          const weekday = getWeekdayName(date);
           return (
-            <div
-              key={date}
-              className={`date-box ${isToday ? 'highlight' : ''}`}
-            >
-              <div className="weekday">{weekday}</div> {/* Display the weekday */}
-              <div className="date">{date.getDate()}</div> {/* Display the date */}
+            <div key={date} className={`date-box ${isToday ? 'highlight' : ''}`}>
+              
+              
+              <div className="date">{date.getDate()}</div>
+                
+              <div className="weekday">{weekday}</div>
             </div>
           );
         })}
@@ -88,35 +87,31 @@ const Navcll = () => {
   );
 };
 
-
-
-
-
 const Hmpge = () => {
   return (
     <div className="task-list">
       <div className="task-item">
-        <FaClipboardList size={50} />
+        <FaRegClipboard size={50} />
         <span>Daily Schedule</span>
       </div>
       <div className="task-item">
-        <FaCalendarAlt size={50} />
+        <FaCalendar size={50} />
         <span>Calendar</span>
       </div>
       <div className="task-item">
         <FaTasks size={50} />
-        <span>Task Management</span>
+        <span>Task Manager</span>
       </div>
       <div className="task-item">
-        <FaChartBar size={50} />
+        <FaChartLine size={50} />
         <span>Progress</span>
       </div>
       <div className="task-item">
-        <FaUser size={50} />
+        <FaUserAlt size={50} />
         <span>Goals</span>
       </div>
       <div className="task-item">
-        <FaUser size={50} />
+        <FaUserAlt size={50} />
         <span>Profile</span>
       </div>
     </div>
@@ -126,8 +121,7 @@ const Hmpge = () => {
 const Task = () => {
   return (
     <div className="app-container">
-     
-      <Navbar></Navbar>
+      {/* <Navbar /> */}
       <Navcll />
       <Hmpge />
     </div>
@@ -135,6 +129,3 @@ const Task = () => {
 };
 
 export default Task;
-
-
-

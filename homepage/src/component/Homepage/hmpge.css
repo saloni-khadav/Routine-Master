@@ -1,27 +1,70 @@
 
-body{
- 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #FF8A00, #E52E71);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-   
+
+
 .app-container {
-  width: 100%;
- align-items: center;
+  background: linear-gradient(135deg, #FF8A00, #E52E71);
+  
+
+ width: 100vw;
+  height: 600px;
+  
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 20px;
-  background-color: rgb(231, 235, 237);
-}
-h{
-  color: black;
-
+  
 }
 
-.weekday {
-  font-size: 12px;
-  color: #f9f5f5;
-  margin-bottom: 5px;
+
+.navbar {
+  width: 100%;
+  background-color:  #fcfaf8;
+ padding: 15px;
+  position: relative;
+  top: 0;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-heading {
+  color: #f59629;
+  font-size: 24px;
+  text-align: center;
+  flex: 1;
+}
+
+.settings-icon {
+  cursor: pointer;
+  color:#FF8A00;
+}
+
+.settings-icon:hover {
+  color: #f3ca72;
 }
 
 
@@ -31,39 +74,39 @@ h{
   justify-content: center;
   margin-top: 20px;
 }
+
 .calendar {
-  
   display: flex;
   gap: 10px;
   transition: transform 0.3s ease;
   overflow-x: hidden;
 }
-.weekday{
-  margin-top: -10px;
-  margin-left: -4px;
-}
-.date{
-  margin-top: 15px;
-  margin-left:-18px;
-}
 
 .date-box {
- 
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  background-color:rgb(100, 104, 220);;
+  background-color:white;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
 }
 
-.highlight {
-  background-color: #ff6347; 
+.date-box.highlight {
+  background-color: #0b0a0a;
   color: white;
 }
+
+.weekday {
+  
+  font-size: 14px;
+  color: #FF8A00;
+  
+}
+
+
 
 .scroll-button {
   background-color: transparent;
@@ -71,12 +114,48 @@ h{
   font-size: 24px;
   cursor: pointer;
   padding: 10px;
-   color: #333; 
+  color: #333;
   transition: color 0.2s ease;
 }
 
 .scroll-button:hover {
-  color: #ff6347;
+  color: #f4f1f1;
+}
+
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  
+}
+
+.task-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("scd2.jpg");
+   background-size: cover; 
+  
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(216, 181, 232, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  width: 300px;
+  height: 150px;
+  text-align: center;
+   margin-top: 20px; 
+   
+   color: #FF8A00;
+   padding-top: 40px;
+}
+
+.task-item span {
+  margin-top: 20px;
+  font-size: 19px;
 }
 
 .task-item:hover {
@@ -84,132 +163,66 @@ h{
 }
 
 
-
-.task-list {
-  display: block;
- margin-top: 30px;
-
-  width: 100%;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.task-item {
-  
-
-  gap: 20px;
-    display: flex;
-    width: 100%;
-    background-color: rgb(100, 104, 220);
-    margin-top: 16px;
-   
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(216, 181, 232, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.task-item span {
- 
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.navbar {
-  margin-top: -20px;
-  width: 103%;
-  background-color:  rgb(100, 104, 220); 
-  padding: 15px; 
-  position: relative; 
-}
-
-
-.navbar-content {
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  position: relative; 
-}
-
-
-.navbar-heading {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-  text-align: center; 
-  flex: 1; 
-}
-
-
-.settings-icon {
-  position: absolute;
-  top: 1px;
-  right: 20px;
-  cursor: pointer;
-  color: white;
-}
-
-
-.settings-icon:hover {
-  color: #f0a500; 
-}
-
- 
-
-
-@media (max-width: 768px) {
-  .app-container {
-    padding: 10px;
-  }
-
-  .date-box {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
-  }
-
-  
-
-  .task-list {
-    gap: 10px;
-    justify-content: space-evenly;
-  }
-
+@media (max-width: 1024px) {
   .task-item {
-    width: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  
-  .date-box {
-    width: 25px;
-    height: 25px;
-    font-size: 12px;
-  }
-
-  .task-list {
-    gap: 10px;
-    justify-content: space-between;
-  }
-
-  .task-item {
-    width: 60px;
+    width: 150px;
+    
   }
 
   .task-item span {
     font-size: 12px;
   }
-} 
 
+  .date-box {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
 
+  .scroll-button {
+    font-size: 20px;
+  }
+}
 
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
 
+  .task-item {
+    width: 120px;
+    
+  }
 
+  .task-list {
+    gap: 10px;
+  }
 
- 
+  .date-box {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
 
+@media (max-width: 480px) {
+  .task-item {
+    width: 150px;
+    
+  }
 
- 
+  .task-item span {
+    font-size: 10px;
+  }
+
+  .task-list {
+    gap: 5px;
+  }
+
+  .date-box {
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+  }
+}
+
